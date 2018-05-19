@@ -25,5 +25,13 @@
       "id": 4
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "itemToAdd": {
+        "task_text": "Pay mortgage",
+        "list_id": 3
+      },
+      "id": 1
+    }
+  ]
 }

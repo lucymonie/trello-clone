@@ -37,7 +37,7 @@ class App extends Component {
         <Header title="Mellow" />
         {listsData &&
         listsData.map((item, index) =>
-          <List key={index} listTitle={item.list.list_name} />
+          <List key={index} listTitle={item.list.list_name} listId={item.id} />
         )}
         <ListForm
           textEntered={ textEntered }

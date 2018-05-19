@@ -4,6 +4,7 @@ import { addNewItem, getData } from '../helpers/database';
 
 class AddCard extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       showAdd: false,
@@ -16,7 +17,9 @@ class AddCard extends Component {
   }
 
   addNewTask = (taskText) => {
-    addNewItem("tasks", {"task_text": taskText});
+    console.log('task text: ', taskText);
+    console.log('listId in props: ', this.props.listId);
+    addNewItem("tasks", {"task_text": taskText, "list_id": this.props.listId});
     this.setState({ textEntered: "", showAdd: false });
     this.updateTasks();
   }
@@ -44,7 +47,7 @@ class AddCard extends Component {
           />
           <SaveCancel
             onClickCancel={() => this.setState({ textEntered: "", showAdd: false }) }
-            onClickSave={this.addNewTask} />
+            onClickSave={ () => this.addNewTask(textEntered) } />
         </div>
         }
       </div>

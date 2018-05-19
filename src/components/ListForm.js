@@ -18,7 +18,9 @@ class ListForm extends Component {
           placeholder="Add a list..."
           value={ textEntered } />
         {showSave &&
-        <SaveCancel onClickSave={ onClickSave } onClickCancel={ onClickCancel } />
+        <SaveCancel 
+          onClickSave={ onClickSave }
+          onClickCancel={ onClickCancel } />
         }
       </div>
     </div>
