@@ -1,0 +1,23 @@
+{
+  "lists": [
+    {
+      "list": {
+        "list_name": "home"
+      },
+      "id": 1
+    },
+    {
+      "list": {
+        "list_name": "work"
+      },
+      "id": 2
+    },
+    {
+      "list": {
+        "list_name": "High priorities"
+      },
+      "id": 3
+    }
+  ],
+  "tasks": []
+}
