@@ -1,0 +1,38 @@
+header {
+  height: 3rem;
+  padding: 10px;
+  color: white;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.5em;
+  font-family: 'Leckerli One', cursive;
+  margin: 0 auto;
+}
+
+.new-list {
+  width: 270px;
+  border-radius: 5px;
+  margin: 0.75em 0 0 0.75em;
+}
+
+#root .new-list-input, .new-list-input:focus {
+  border-bottom: none;
+  margin-bottom: 0;
+  box-shadow: none;
+  padding-left: 8px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.save-button {
+  margin: 0 5px 8px 8px;
+}
+
+.close-icon {
+  font-size: 30px;
+  vertical-align: top;
+}
