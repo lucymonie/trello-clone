@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SaveCancel from './SaveCancel';
 
 class ListForm extends Component {
   constructor() {
@@ -9,6 +10,7 @@ class ListForm extends Component {
   render() {
     const { onClickSave, onClickCancel, onFocus, onChange, textEntered, showSave } = this.props;
     return (
+    <div className="list-wrapper">
       <div className="new-list indigo lighten-5">
         <input className="new-list-input"
           onFocus={ onFocus }
@@ -16,11 +18,10 @@ class ListForm extends Component {
           placeholder="Add a list..."
           value={ textEntered } />
         {showSave &&
-        <div>
-          <span className="save-button btn-small green" onClick={ onClickSave }>Save</span>
-          <span className="cancel-button cursor-pointer" onClick={ onClickCancel }><i className="close-icon grey-text material-icons">close</i></span>
-        </div>}
+        <SaveCancel onClickSave={ onClickSave } onClickCancel={ onClickCancel } />
+        }
       </div>
+    </div>
     )
   }
 }

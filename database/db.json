@@ -17,6 +17,12 @@
         "list_name": "High priorities"
       },
       "id": 3
+    },
+    {
+      "list": {
+        "list_name": "Kid stuff"
+      },
+      "id": 4
     }
   ],
   "tasks": []

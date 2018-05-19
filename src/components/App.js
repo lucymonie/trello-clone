@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getLists, addNewList } from '../helpers/database';
+import { getData, addNewItem } from '../helpers/database';
 import Header from './Header';
 import ListForm from './ListForm';
+import List from './List';
 
 class App extends Component {
   constructor() {
@@ -13,22 +14,31 @@ class App extends Component {
     }
   }
 
-  getAllLists = () => {
-    getLists().then((listsData) => {
+  componentDidMount() {
+    this.updateLists();
+  }
+
+  updateLists = () => {
+    getData("lists").then((listsData) => {
       this.setState({ listsData });
     });
   }
 
   addNewList = (listTitle) => {
-    addNewList({"list_name": listTitle});
-    this.setState({ textEntered: "" })
+    addNewItem("lists", {"list_name": listTitle});
+    this.setState({ textEntered: "" });
+    this.updateLists();
   }
 
   render() {
-    const { textEntered, showSave } = this.state;
+    const { textEntered, showSave, listsData } = this.state;
     return (
       <div className="App">
         <Header title="Mellow" />
+        {listsData &&
+        listsData.map((item, index) =>
+          <List key={index} listTitle={item.list.list_name} />
+        )}
         <ListForm
           textEntered={ textEntered }
           onFocus={ () => this.setState({ showSave: true })}

@@ -11,10 +11,26 @@ header {
   margin: 0 auto;
 }
 
-.new-list {
+.new-list, .list {
   width: 270px;
   border-radius: 5px;
   margin: 0.75em 0 0 0.75em;
+  float: left;
+}
+
+.list-wrapper {
+  height: 100vh;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  padding: 0.5em 0 0.75em 0.75em;
 }
 
 #root .new-list-input, .new-list-input:focus {
@@ -35,4 +51,10 @@ header {
 .close-icon {
   font-size: 30px;
   vertical-align: top;
+}
+
+.card-input, .card-input:focus {
+  width: 96%;
+  border-radius: 5px;
+  border: 0;
 }
