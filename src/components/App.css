@@ -66,3 +66,16 @@ header {
   padding: 5px 3px 5px 3px;
   margin: 3px 0 5px 0;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: darkGray;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: darkGray;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: darkGray;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: darkGray;
+}
