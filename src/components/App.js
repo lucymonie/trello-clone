@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { getData, addNewList } from '../helpers/database';
 import Header from './Header';
-import ListForm from './ListForm';
+import AddList from './AddList';
 import List from './List';
 
 class App extends Component {
@@ -56,7 +56,7 @@ class App extends Component {
             tasks={tasksData.filter(taskItem => taskItem.task.list_id === item.id)}
             updateTasks={this.updateTasks} />
         )}
-        <ListForm
+        <AddList
           textEntered={ textEntered }
           onFocus={ () => this.setState({ showSave: true })}
           onChange={ (value) => this.setState({ textEntered: value }) }
