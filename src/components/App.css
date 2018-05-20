@@ -13,7 +13,7 @@ header {
 
 .new-list, .list {
   width: 270px;
-  border-radius: 5px;
+  border-radius: 3px;
   margin: 0.75em 0 0 0.75em;
   float: left;
 }
@@ -22,7 +22,8 @@ header {
   height: 100vh;
   display: inline-block;
   vertical-align: top;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-x: scroll;
 }
 
 .list {
@@ -55,6 +56,13 @@ header {
 
 .card-input, .card-input:focus {
   width: 96%;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 0;
+}
+
+.card-style {
+  width: 96%;
+  border-radius: 3px;
+  padding: 5px 3px 5px 3px;
+  margin: 3px 0 5px 0;
 }

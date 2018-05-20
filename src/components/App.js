@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getData, addNewItem } from '../helpers/database';
+import { getData, addNewList } from '../helpers/database';
 import Header from './Header';
 import ListForm from './ListForm';
 import List from './List';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showSave: false,
       textEntered: ""
@@ -16,6 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     this.updateLists();
+    this.updateTasks();
   }
 
   updateLists = () => {
@@ -24,26 +25,42 @@ class App extends Component {
     });
   }
 
+  updateTasks = () => {
+    getData("tasks").then((tasksData) => {
+      this.setState({ tasksData });
+    });
+  }
+
   addNewList = (listTitle) => {
-    addNewItem("lists", {"list_name": listTitle});
+    addNewList({"list_name": listTitle});
     this.setState({ textEntered: "" });
     this.updateLists();
   }
 
+  onClickSave = () => {
+    this.addNewList(this.state.textEntered);
+    this.setState({ textEntered: "", showSave: false });
+  }
+
   render() {
-    const { textEntered, showSave, listsData } = this.state;
+    const { textEntered, showSave, listsData, tasksData } = this.state;
     return (
       <div className="App">
         <Header title="Mellow" />
-        {listsData &&
+        {listsData && tasksData &&
         listsData.map((item, index) =>
-          <List key={index} listTitle={item.list.list_name} listId={item.id} />
+          <List
+            key={index}
+            listTitle={item.list.list_name}
+            listId={item.id}
+            tasks={tasksData.filter(taskItem => taskItem.task.list_id === item.id)}
+            updateTasks={this.updateTasks} />
         )}
         <ListForm
           textEntered={ textEntered }
           onFocus={ () => this.setState({ showSave: true })}
           onChange={ (value) => this.setState({ textEntered: value }) }
-          onClickSave={ () => this.addNewList(textEntered) }
+          onClickSave={ this.onClickSave }
           onClickCancel={ () => this.setState({ textEntered: "", showSave: false }) }
           showSave={showSave}
         />

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import SaveCancel from './SaveCancel';
-import { addNewItem, getData } from '../helpers/database';
+import { addNewTask } from '../helpers/database';
 
 class AddCard extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       showAdd: false,
@@ -13,21 +12,19 @@ class AddCard extends Component {
   }
 
   componentDidMount() {
-    this.updateTasks()
+    this.props.updateTasks();
   }
 
   addNewTask = (taskText) => {
-    console.log('task text: ', taskText);
-    console.log('listId in props: ', this.props.listId);
-    addNewItem("tasks", {"task_text": taskText, "list_id": this.props.listId});
+    addNewTask({"task_text": taskText, "list_id": this.props.listId});
     this.setState({ textEntered: "", showAdd: false });
-    this.updateTasks();
+    this.props.updateTasks();
   }
 
-  updateTasks = () => {
-    getData("tasks").then((tasksData) => {
-      this.setState({ tasksData });
-    });
+  onClickSave = () => {
+    this.addNewTask(this.state.textEntered);
+    this.setState({ showAdd: false, textEntered: "" });
+    this.props.updateTasks();
   }
 
   render() {
@@ -47,7 +44,7 @@ class AddCard extends Component {
           />
           <SaveCancel
             onClickCancel={() => this.setState({ textEntered: "", showAdd: false }) }
-            onClickSave={ () => this.addNewTask(textEntered) } />
+            onClickSave={ this.onClickSave } />
         </div>
         }
       </div>

@@ -20,18 +20,67 @@
     },
     {
       "list": {
-        "list_name": "Kid stuff"
+        "list_name": "Recipes to try"
       },
       "id": 4
     }
   ],
   "tasks": [
     {
-      "itemToAdd": {
+      "task": {
         "task_text": "Pay mortgage",
         "list_id": 3
       },
       "id": 1
+    },
+    {
+      "task": {
+        "task_text": "Chocolate-chip cookies",
+        "list_id": 4
+      },
+      "id": 2
+    },
+    {
+      "task": {
+        "task_text": "Buy a dog",
+        "list_id": 3
+      },
+      "id": 3
+    },
+    {
+      "task": {
+        "task_text": "Try to make sense of Amplify and logging in",
+        "list_id": 2
+      },
+      "id": 4
+    },
+    {
+      "task": {
+        "task_text": "Plant everything that's in a pot",
+        "list_id": 1
+      },
+      "id": 5
+    },
+    {
+      "task": {
+        "task_text": "Empty the shed and get rid of the shed",
+        "list_id": 1
+      },
+      "id": 6
+    },
+    {
+      "task": {
+        "task_text": "Write more tests",
+        "list_id": 2
+      },
+      "id": 7
+    },
+    {
+      "task": {
+        "task_text": "Write some tests for this app",
+        "list_id": 3
+      },
+      "id": 8
     }
   ]
 }
