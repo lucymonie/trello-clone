@@ -45,3 +45,20 @@ export function addNewTask (task) {
     return jsonResponse;
   });
 }
+
+export function makeUpdate (taskId, task) {
+  return fetch(`http://localhost:3000/tasks/${taskId}`, {
+    method: 'put',
+    mode: 'cors',
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    }),
+    body: JSON.stringify({
+      task
+    })
+  }).then((response) => {
+    return response.json();
+  }).then((jsonResponse) => {
+    return jsonResponse;
+  });
+}

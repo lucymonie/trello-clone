@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getData, addNewList } from '../helpers/database';
+import { getData, addNewList, makeUpdate } from '../helpers/database';
 import Header from './Header';
 import AddList from './AddList';
 import List from './List';
@@ -10,7 +10,11 @@ class App extends Component {
     super(props);
     this.state = {
       showSave: false,
-      textEntered: ""
+      showEditTask: null,
+      textEntered: "",
+      taskText: "",
+      listsData: [],
+      tasksData: []
     }
   }
 
@@ -42,8 +46,31 @@ class App extends Component {
     this.setState({ textEntered: "", showSave: false });
   }
 
+  patchTask = (itemId, task) => {
+    makeUpdate(itemId, task)
+    .then(() => {
+      this.onClickCancelTask();
+      this.updateTasks();
+    });
+  }
+
+  onClickCancelTask = () => {
+    this.setState({
+      taskText: "",
+      showEditTask: null
+    });
+  }
+
+  editTask = (id, value) => {
+    this.setState({ showEditTask: id, taskText: value });
+  }
+
+  handleTaskText = (value) => {
+    this.setState({ taskText: value });
+  }
+
   render() {
-    const { textEntered, showSave, listsData, tasksData } = this.state;
+    const { textEntered, showSave, listsData, tasksData, showEditTask, taskText } = this.state;
     return (
       <div>
         <Header title="Mellow" />
@@ -55,7 +82,14 @@ class App extends Component {
               listTitle={item.list.list_name}
               listId={item.id}
               tasks={tasksData.filter(taskItem => taskItem.task.list_id === item.id)}
-              updateTasks={this.updateTasks} />
+              updateTasks={this.updateTasks}
+              editTask={this.editTask}
+              handleTaskText={this.handleTaskText}
+              showEditTask={showEditTask}
+              taskText={taskText}
+              patchTask={this.patchTask}
+              onClickCancelTask={this.onClickCancelTask}
+            />
           )}
           <AddList
             textEntered={ textEntered }

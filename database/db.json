@@ -28,7 +28,7 @@
   "tasks": [
     {
       "task": {
-        "task_text": "Pay mortgage",
+        "task_text": "Pay mortgage absolutely totally on time",
         "list_id": 3
       },
       "id": 1
@@ -42,7 +42,7 @@
     },
     {
       "task": {
-        "task_text": "Buy a dog",
+        "task_text": "Buy a cat",
         "list_id": 3
       },
       "id": 3
@@ -77,7 +77,7 @@
     },
     {
       "task": {
-        "task_text": "Write some tests for this app",
+        "task_text": "Write some fab tests for this app",
         "list_id": 3
       },
       "id": 8
