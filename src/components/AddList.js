@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SaveCancel from './SaveCancel';
 
 const AddList = ({ onClickSave, onClickCancel, onFocus, onChange, textEntered, showSave }) => (
