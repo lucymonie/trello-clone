@@ -1,5 +1,12 @@
+.all-lists-container {
+  /* width: 30em; */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 header {
   height: 3rem;
+  width: 100vw;
   padding: 10px;
   color: white;
   margin: 0;
@@ -23,7 +30,6 @@ header {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
-  overflow-x: scroll;
 }
 
 .list {

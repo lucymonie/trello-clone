@@ -45,25 +45,27 @@ class App extends Component {
   render() {
     const { textEntered, showSave, listsData, tasksData } = this.state;
     return (
-      <div className="App">
+      <div>
         <Header title="Mellow" />
-        {listsData && tasksData &&
-        listsData.map((item, index) =>
-          <List
-            key={index}
-            listTitle={item.list.list_name}
-            listId={item.id}
-            tasks={tasksData.filter(taskItem => taskItem.task.list_id === item.id)}
-            updateTasks={this.updateTasks} />
-        )}
-        <AddList
-          textEntered={ textEntered }
-          onFocus={ () => this.setState({ showSave: true })}
-          onChange={ (value) => this.setState({ textEntered: value }) }
-          onClickSave={ this.onClickSave }
-          onClickCancel={ () => this.setState({ textEntered: "", showSave: false }) }
-          showSave={showSave}
-        />
+        <div className="all-lists-container">
+          {listsData && tasksData &&
+          listsData.map((item, index) =>
+            <List
+              key={index}
+              listTitle={item.list.list_name}
+              listId={item.id}
+              tasks={tasksData.filter(taskItem => taskItem.task.list_id === item.id)}
+              updateTasks={this.updateTasks} />
+          )}
+          <AddList
+            textEntered={ textEntered }
+            onFocus={ () => this.setState({ showSave: true })}
+            onChange={ (value) => this.setState({ textEntered: value }) }
+            onClickSave={ this.onClickSave }
+            onClickCancel={ () => this.setState({ textEntered: "", showSave: false }) }
+            showSave={showSave}
+          />
+        </div>
       </div>
     );
   }
