@@ -32,7 +32,7 @@ class AddCard extends Component {
       return (
       <div>
         {!showAdd &&
-        <div className="add-card grey-text cursor-pointer"
+        <div className="add-card grey-text hover-style cursor-pointer"
           onClick={ () => this.setState({ showAdd: true }) }
         >Add a card...</div>}
         {showAdd &&
