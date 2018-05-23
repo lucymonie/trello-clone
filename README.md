@@ -32,7 +32,7 @@ Tests are written in Jest with Enzyme and Snapshots.
 - [x] Persist lists and cards (however you like, but local storage is fine)
 
 ### Next steps
-- Use Context API to pass props through the app as things are getting tangled and awkward
 - Add the due date functionality as this will make it possible to check off three more items on the specs
 - Add a description field to task cards
 - Use [React DnD](https://github.com/react-dnd/react-dnd) for drag and drop functionality
+- Consider adding [Context API](https://reactjs.org/docs/context.html) to pass props through the app as things are getting a little complicated
