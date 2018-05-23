@@ -1,5 +1,5 @@
 export function getData (dataType) {
-  return fetch(`http://localhost:3000/${dataType}/`, {
+  return fetch(`http://localhost:4000/${dataType}/`, {
     method: 'get',
     mode: 'cors',
     headers: new Headers({
@@ -13,7 +13,7 @@ export function getData (dataType) {
 }
 
 export function addNewList (list) {
-  return fetch('http://localhost:3000/lists/', {
+  return fetch('http://localhost:4000/lists/', {
     method: 'post',
     mode: 'cors',
     headers: new Headers({
@@ -30,7 +30,7 @@ export function addNewList (list) {
 }
 
 export function addNewTask (task) {
-  return fetch('http://localhost:3000/tasks/', {
+  return fetch('http://localhost:4000/tasks/', {
     method: 'post',
     mode: 'cors',
     headers: new Headers({
@@ -47,7 +47,7 @@ export function addNewTask (task) {
 }
 
 export function makeUpdate (taskId, task) {
-  return fetch(`http://localhost:3000/tasks/${taskId}`, {
+  return fetch(`http://localhost:4000/tasks/${taskId}`, {
     method: 'put',
     mode: 'cors',
     headers: new Headers({
