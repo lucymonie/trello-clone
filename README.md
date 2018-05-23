@@ -36,3 +36,4 @@ Tests are written in Jest with Enzyme and Snapshots.
 - Add a description field to task cards
 - Use [React DnD](https://github.com/react-dnd/react-dnd) for drag and drop functionality
 - Consider adding [Context API](https://reactjs.org/docs/context.html) to pass props through the app as things are getting a little complicated
+- More tests...
