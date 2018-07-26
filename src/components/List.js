@@ -2,7 +2,20 @@ import React from 'react';
 import AddCard from './AddCard';
 import Card from './Card';
 
-const List = ({ listTitle, listId, tasks, updateTasks, editTask, handleTaskText, taskText, showEditTask, patchTask, onClickCancelTask }) => (
+const List = ({
+  listTitle,
+  listId,
+  tasks,
+  updateTasks,
+  editTask,
+  handleTaskText,
+  handleDueDate,
+  date,
+  taskText,
+  showEditTask,
+  patchTask,
+  onClickCancelTask
+}) => (
 <div className="list-wrapper">
   <div className="list blue-grey lighten-4">
     <div className="list-header"><b>{ listTitle.charAt(0).toUpperCase().concat(listTitle.slice(1)) }</b></div>
@@ -12,6 +25,8 @@ const List = ({ listTitle, listId, tasks, updateTasks, editTask, handleTaskText,
         task={task}
         editTask={editTask}
         handleTaskText={handleTaskText}
+        handleDueDate={handleDueDate}
+        date={date}
         taskText={taskText}
         showEditTask={showEditTask}
         patchTask={patchTask}

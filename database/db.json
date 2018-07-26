@@ -1,4 +1,47 @@
 {
-  "lists": [],
-  "tasks": []
+  "lists": [
+    {
+      "list": {
+        "list_name": "Lucy's list"
+      },
+      "id": 1
+    },
+    {
+      "list": {
+        "list_name": "Trip to LA"
+      },
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "task": {
+        "task_text": "This is a new list item",
+        "list_id": 1
+      },
+      "id": 1
+    },
+    {
+      "task": {
+        "task_text": "A second list item here",
+        "list_id": 1
+      },
+      "id": 2
+    },
+    {
+      "task": {
+        "task_text": "Remember to pay for the WYP course",
+        "list_id": 2
+      },
+      "id": 3
+    },
+    {
+      "task": {
+        "task_text": "Think about a list of things Eden will need for WYP course",
+        "list_id": 2,
+        "due_date": "2018-08-07T17:00:00.000Z"
+      },
+      "id": 4
+    }
+  ]
 }

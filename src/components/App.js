@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import 'react-dates/initialize';
 import './App.css';
+import 'react-dates/lib/css/_datepicker.css';
 import { getData, addNewList, makeUpdate } from '../helpers/database';
 import Header from './Header';
 import AddList from './AddList';
@@ -65,12 +67,16 @@ class App extends Component {
     this.setState({ showEditTask: id, taskText: value });
   }
 
-  handleTaskText = (value) => {
+  handleTaskChanges = (value) => {
     this.setState({ taskText: value });
   }
 
+  handleDueDate = (dateObj) => {
+    this.setState({ date: dateObj });
+  }
+
   render() {
-    const { textEntered, showSave, listsData, tasksData, showEditTask, taskText } = this.state;
+    const { textEntered, showSave, listsData, tasksData, showEditTask, taskText, date } = this.state;
     return (
       <div>
         <Header title="Mellow" />
@@ -85,6 +91,8 @@ class App extends Component {
               updateTasks={this.updateTasks}
               editTask={this.editTask}
               handleTaskText={this.handleTaskText}
+              handleDueDate={this.handleDueDate}
+              date={date}
               showEditTask={showEditTask}
               taskText={taskText}
               patchTask={this.patchTask}

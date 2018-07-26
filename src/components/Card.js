@@ -1,7 +1,18 @@
 import React from 'react';
 import SaveCancel from './SaveCancel';
+import DueDate from './DueDate';
 
-const Card = ({ task, editTask, showEditTask, handleTaskText, taskText, patchTask, onClickCancelTask }) => (
+const Card = ({
+  task,
+  editTask,
+  showEditTask,
+  handleTaskText,
+  handleDueDate,
+  date,
+  taskText,
+  patchTask,
+  onClickCancelTask
+}) => (
   <div className="white card-style">
     {showEditTask !== task.id &&
       <div className="hover-style cursor-pointer"
@@ -12,8 +23,17 @@ const Card = ({ task, editTask, showEditTask, handleTaskText, taskText, patchTas
         <textarea className="card-input card-textarea blue-grey lighten-5"
           onChange={(e) => handleTaskText(e.target.value)}
           value={taskText} />
+        <DueDate
+          handleDueDate={handleDueDate}
+          date={date}
+          taskId={(task.id).toString()}
+         />
         <SaveCancel
-          onClickSave={ () => patchTask(task.id, { "task_text": taskText, "list_id": task.task.list_id }) }
+          onClickSave={ () => patchTask(task.id, {
+            "task_text": taskText,
+            "list_id": task.task.list_id,
+            "due_date": date
+          }) }
           onClickCancel={ () => onClickCancelTask() }
         />
       </div>
