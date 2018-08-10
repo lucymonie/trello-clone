@@ -9,6 +9,7 @@ const Card = ({
   handleTaskText,
   handleDueDate,
   date,
+  existingDate,
   taskText,
   patchTask,
   onClickCancelTask
@@ -26,7 +27,7 @@ const Card = ({
         <DueDate
           handleDueDate={handleDueDate}
           date={date}
-          taskId={(task.id).toString()}
+          existingDate={existingDate}
          />
         <SaveCancel
           onClickSave={ () => patchTask(task.id, {

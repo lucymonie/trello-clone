@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import 'react-dates/initialize';
 import './App.css';
-import 'react-dates/lib/css/_datepicker.css';
+import 'react-datepicker/dist/react-datepicker.css';
 import { getData, addNewList, makeUpdate } from '../helpers/database';
 import Header from './Header';
 import AddList from './AddList';
@@ -16,7 +15,8 @@ class App extends Component {
       textEntered: "",
       taskText: "",
       listsData: [],
-      tasksData: []
+      tasksData: [],
+      date: null
     }
   }
 
@@ -59,7 +59,8 @@ class App extends Component {
   onClickCancelTask = () => {
     this.setState({
       taskText: "",
-      showEditTask: null
+      showEditTask: null,
+      date: null,
     });
   }
 
@@ -71,8 +72,8 @@ class App extends Component {
     this.setState({ taskText: value });
   }
 
-  handleDueDate = (dateObj) => {
-    this.setState({ date: dateObj });
+  handleDueDate = (date) => {
+    this.setState({ date });
   }
 
   render() {

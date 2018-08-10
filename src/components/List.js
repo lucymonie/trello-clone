@@ -27,6 +27,7 @@ const List = ({
         handleTaskText={handleTaskText}
         handleDueDate={handleDueDate}
         date={date}
+        existingDate={task.task.due_date}
         taskText={taskText}
         showEditTask={showEditTask}
         patchTask={patchTask}

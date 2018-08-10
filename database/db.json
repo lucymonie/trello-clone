@@ -17,14 +17,16 @@
     {
       "task": {
         "task_text": "This is a new list item",
-        "list_id": 1
+        "list_id": 1,
+        "due_date": "2018-10-03T13:35:07.000Z"
       },
       "id": 1
     },
     {
       "task": {
         "task_text": "A second list item here",
-        "list_id": 1
+        "list_id": 1,
+        "due_date": "2018-08-27T23:00:00.000Z"
       },
       "id": 2
     },
@@ -39,9 +41,32 @@
       "task": {
         "task_text": "Think about a list of things Eden will need for WYP course",
         "list_id": 2,
-        "due_date": "2018-08-07T17:00:00.000Z"
+        "due_date": "2018-08-27T11:46:15.000Z"
       },
       "id": 4
+    },
+    {
+      "task": {
+        "task_text": "This is a new task",
+        "list_id": 2,
+        "due_date": "2018-08-14T13:38:49.000Z"
+      },
+      "id": 5
+    },
+    {
+      "task": {
+        "task_text": "Send off return items",
+        "list_id": 2,
+        "due_date": null
+      },
+      "id": 6
+    },
+    {
+      "task": {
+        "task_text": "Drink more coffee to stay awake",
+        "list_id": 2
+      },
+      "id": 7
     }
   ]
 }

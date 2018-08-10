@@ -90,6 +90,14 @@ header {
   margin: 0 0.5em 0.5em;
 }
 
+.due-date-title {
+  margin-right: 0.5em;
+}
+
+.date-picker {
+  cursor: pointer;
+}
+
 .due-date-inline {
   display: inline-block;
 }
@@ -109,4 +117,10 @@ header {
 }
 :-moz-placeholder { /* Firefox 18- */
   color: darkGray;
+}
+
+.react-datepicker__input-container input[type=text] {
+  border-bottom: none;
+  margin-bottom: 0;
+  font-size: 14px;
 }
