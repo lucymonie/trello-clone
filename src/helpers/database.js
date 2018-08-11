@@ -1,19 +1,17 @@
-export function getData (dataType) {
-  return fetch(`http://localhost:4000/${dataType}/`, {
+export const getData = dataType => (
+  fetch(`http://localhost:4000/${dataType}/`, {
     method: 'get',
     mode: 'cors',
     headers: new Headers({
       'Content-Type': 'application/json'
     }),
-  }).then((response) => {
-    return response.json();
-  }).then((jsonResponse) => {
-    return jsonResponse;
-  });
-}
+  })
+  .then(response => response.json())
+  .then(jsonResponse => jsonResponse)
+);
 
-export function addNewList (list) {
-  return fetch('http://localhost:4000/lists/', {
+export const addNewList = list => (
+  fetch('http://localhost:4000/lists/', {
     method: 'post',
     mode: 'cors',
     headers: new Headers({
@@ -22,15 +20,13 @@ export function addNewList (list) {
     body: JSON.stringify({
       list
     })
-  }).then((response) => {
-    return response.json();
-  }).then((jsonResponse) => {
-    return jsonResponse;
-  });
-}
+  })
+  .then(response => response.json())
+  .then(jsonResponse => jsonResponse)
+);
 
-export function addNewTask (task) {
-  return fetch('http://localhost:4000/tasks/', {
+export const addNewTask = task => (
+  fetch('http://localhost:4000/tasks/', {
     method: 'post',
     mode: 'cors',
     headers: new Headers({
@@ -39,15 +35,13 @@ export function addNewTask (task) {
     body: JSON.stringify({
       task
     })
-  }).then((response) => {
-    return response.json();
-  }).then((jsonResponse) => {
-    return jsonResponse;
-  });
-}
+  })
+  .then(response => response.json())
+  .then(jsonResponse => jsonResponse)
+);
 
-export function makeUpdate (taskId, task) {
-  return fetch(`http://localhost:4000/tasks/${taskId}`, {
+export const makeUpdate = (taskId, task) => (
+  fetch(`http://localhost:4000/tasks/${taskId}`, {
     method: 'put',
     mode: 'cors',
     headers: new Headers({
@@ -56,9 +50,7 @@ export function makeUpdate (taskId, task) {
     body: JSON.stringify({
       task
     })
-  }).then((response) => {
-    return response.json();
-  }).then((jsonResponse) => {
-    return jsonResponse;
-  });
-}
+  })
+  .then(response => response.json())
+  .then(jsonResponse => jsonResponse)
+);
