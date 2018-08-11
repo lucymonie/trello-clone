@@ -33,7 +33,8 @@
     {
       "task": {
         "task_text": "Remember to pay for the WYP course",
-        "list_id": 2
+        "list_id": 2,
+        "due_date": "2018-07-31T23:00:00.000Z"
       },
       "id": 3
     },
@@ -41,7 +42,7 @@
       "task": {
         "task_text": "Think about a list of things Eden will need for WYP course",
         "list_id": 2,
-        "due_date": "2018-08-27T11:46:15.000Z"
+        "due_date": "2018-08-07T11:46:15.000Z"
       },
       "id": 4
     },

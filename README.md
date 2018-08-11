@@ -21,14 +21,14 @@ Tests are written in Jest with Enzyme and Snapshots.
 - [x] A list has a required name and a collection of cards.
 - [x] A card has a required title.
 - [ ] A card has a required description.
-- [ ] A card has an optional due date.
+- [x] A card has an optional due date.
 #### A user of the application should:
 - [x] Be able to create a new list.
 - [x] Be able to create a new card in a list.
 - [ ] Be able to move cards between lists.
 #### The application should:
 - [ ] Star cards that have a due date in the next 3 days.
-- [ ] Highlight cards in red that are overdue.
+- [x] Highlight cards in red that are overdue.
 - [x] Persist lists and cards (however you like, but local storage is fine)
 
 ### Next steps

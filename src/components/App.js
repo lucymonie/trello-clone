@@ -16,7 +16,7 @@ class App extends Component {
       taskText: "",
       listsData: [],
       tasksData: [],
-      date: null
+      date: null,
     }
   }
 
@@ -72,8 +72,8 @@ class App extends Component {
     this.setState({ taskText: value });
   }
 
-  handleDueDate = (date) => {
-    this.setState({ date });
+  handleDueDate = (date, lateNess) => {
+    this.setState({ date, lateNess });
   }
 
   render() {

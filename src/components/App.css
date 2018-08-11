@@ -94,10 +94,6 @@ header {
   margin-right: 0.5em;
 }
 
-.date-picker {
-  cursor: pointer;
-}
-
 .due-date-inline {
   display: inline-block;
 }
